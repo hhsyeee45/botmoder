@@ -5,8 +5,9 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, BotCommand
 
-TOKEN = "8673695114:AAHFID_fz5Gvw8LfyVHH1bbCOtz4kray4l0"
-dp = Dispatcher()
+TOKEN = os.getenv("BOT_TOKEN")   # отримує токен з Railway Variables
+bot = Bot(token=TOKEN)
+dp = Dispatcher(bot)
 
 moderator_active = False
 warnings = defaultdict(int)
