@@ -7,6 +7,7 @@ from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, B
 
 import os
 TOKEN = os.getenv("BOT_TOKEN")
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 moderator_active = False
