@@ -9,7 +9,6 @@ import os
 TOKEN = os.getenv("BOT_TOKEN")
 dp = Dispatcher()
 
-
 moderator_active = False
 warnings = defaultdict(int)
 MAX_MESSAGES = 10
@@ -17,9 +16,9 @@ TIME_WINDOW = 30
 user_activity = defaultdict(lambda: deque())
 
 # --- Завантаження списку слів ---
-with open(r"C:\Users\Алекс\Desktop\bot\bad_words.txt", encoding="utf-8") as f:
-    BAD_WORDS = {line.strip().lower() for line in f if line.strip()}
-
+with open("bad_words.txt", "r", encoding="utf-8") as f:
+    bad_words = f.read().splitlines()
+    
 def censor_text(text: str) -> str:
     censored = text
     for bad_word in BAD_WORDS:
