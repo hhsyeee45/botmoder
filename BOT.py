@@ -18,7 +18,7 @@ user_activity = defaultdict(lambda: deque())
 
 # --- Завантаження списку слів ---
 with open("bad_words.txt", "r", encoding="utf-8") as f:
-    bad_words = f.read().splitlines()
+    BAD_WORDS = f.read().splitlines()
     
 def censor_text(text: str) -> str:
     censored = text
